@@ -19,5 +19,7 @@ outputdata file is the outputdatafile, i really hope you figure this out on your
 
 The MirrorParameter.txt file is a good example of a parameter file, also it basically explains everything.
 
+also I think there needs to be a /data that git is ignoring. 
+
 I included a python script to plot data, matlab script will come soon. that is what I will use so it will be more mature in the long run. 
 
