@@ -9,7 +9,7 @@ import matplotlib.pyplot as m
 
 
 
-fileName="testdata.dat"
+fileName="./data/testdata.dat_5"
 with open(fileName, mode='rb') as file:
 	dataBuffer=file.read(8)
 	steps=struct.unpack('d',dataBuffer)
@@ -45,12 +45,12 @@ yvel=data[0:neutrons-1,0:steps-1,8]
 zvel=data[0:neutrons-1,0:steps-1,9]
 t=data[0,0:steps-1,10]
 
-if neutrons>1
+if neutrons>1:
 	Sx=np.mean(sx,axis=0)
 	Sy=np.mean(sy,axis=0)
 	Sz=np.mean(sz,axis=0)
 	Phase=np.mean(phase,axis=0)
-else
+else:
 	Sx=sx;
 	Sy=sy;
 	Sz=sz;
@@ -66,7 +66,7 @@ fig, ax = m.subplots()
 #ax.plot(t,ypos[0,0:steps-1])
 #ax.plot(t,zpos[0,0:steps-1])
 #mean phase plot. 
-ax.plot(t,Phase)
+ax.plot(t,Sx)
 
 #mean Sx plot. 
 #ax.plot(t,Sx)

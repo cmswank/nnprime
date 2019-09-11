@@ -1,4 +1,4 @@
-//Parameter file for C++ only '//' works as comments (its not c++.)
+//Parameter file for mirror neutron conductor, only '//' works as comments (its not c++.)
 // geometry: 0 is cylinder, 1 is rectangle, 2 is sphere
 // cylinder has radius and length, 
 //rectangle has xwidht ylength, zheight. 
@@ -16,14 +16,14 @@ radius=0.5;  //for cylinder and sphere.
 //zheight=0.40;  //for rectangle
 vmax=5.;//maximum velocity allowed in the geometry (hard v^2 distribution)
 diffuse=0.2; //diffuse wall bounce probability 
-T=1000.;  //time in seconds simulated
+T=1.;  //time in seconds simulated
 N=1000;   //number of neutrons simulated
 cores=25;  //number of cores to simulate with. 
-dt=1.;    //output time steps. 
-rkdt=0.01;  //solver time step
+dt=1E-3;    //output time steps. 
+rkdt=1E-4;  //solver time step
 seed=8;     //starting randon engine seed. 
 B0=1E-5;    //lab field in Tesla
 B0m=9.9E-6; //mirror field in Tesla?
-thetam=0.0,1.57079,5; //theta angle between lab and mirror field
+thetam=0.0;//0.0,1.57079,5; //theta angle between lab and mirror field
 phim=0.0;   //phi angle between lab and mirror field 
-eps=10.;  //rad per second. coupling between neutron and mirror neutorn. 
+eps=0.,10,10;  //rad per second. coupling between neutron and mirror neutorn. 

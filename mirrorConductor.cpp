@@ -61,8 +61,8 @@ void mirrorConductor::Conduct()
   //for loop for scanning parameter, if any. 
   for(int parnum=0;parnum<=scannumber;parnum++){
     //naming for scanning, again if any. 
-    if(scanbool) tempofilename=outfilename+"_"+std::to_string(parnum);
-    else  tempofilename=outfilename;
+    if(scanbool) tempofilename="./data/"+outfilename+"_"+std::to_string(parnum);
+    else  tempofilename="./data/"+outfilename;
   *scanvar=scanstart+(double)parnum*(scanstop-scanstart)/((double)scannumber);
   this->spinfile.open (tempofilename.c_str(),std::ios::binary | std::ios::out);
   
