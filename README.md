@@ -15,7 +15,7 @@ once the thing is made it can be run with.
 ./runMirror parameterfile outputdata
 
 paremeterfile is the name of the parameter file, if its not obvious. 
-outputdata is the output data file, i really hope you figure this out on your own. 
+outputdata is the output data file name, i really hope you figure this out on your own. 
 
 The MirrorParameter.txt file is a good example of a parameter file, also it basically explains everything.
 
