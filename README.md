@@ -12,8 +12,7 @@ I know my makefile is lame, also I know I don't care. If you care, then fix it.
 
 once the thing is made it can be run with: $./runMirror parameterfile outputdata
 
-paremeterfile is the name of the parameter file, if its not obvious. 
-outputdata is the output data file name, i really hope you figure this out on your own. 
+parameterfile is the name of the parameter file. outputdata is the output data file name
 
 The MirrorParameter.txt file is a good example of a parameter file, also it basically explains everything.
 
