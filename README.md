@@ -16,7 +16,5 @@ parameterfile is the name of the parameter file. outputdata is the output data f
 
 The MirrorParameter.txt file is a good example of a parameter file, also it basically explains everything.
 
-also I think there needs to be a ./data/ that git is ignoring. that is where the data is saved.
-
-I included a python script to plot data, matlab script will come soon. that is what I will use so it will be more mature in the long run. 
+I included a python extraction/plotting script, matlab extraction/plotting is in the ./data/ folder. I will use matlab so it will be more mature in the long run. 
 
