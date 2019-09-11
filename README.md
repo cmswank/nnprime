@@ -3,7 +3,7 @@ Simulates precession of neutron mirror neutron system according to the equations
 
 It simulates in either a cylinder, rectangle or sphere. The n-n' mixing phase IS reset on wall collision (alhtough its not clear to me this is true, afterall neutrons in interferometry don't consider a wall collision a measurement.)
 
-UCN have a hard v^2 distribution and gravity is accounted in the starting position via equaiton 4.7 in Bob G's Book. The Fermi potential in the trap is set by the maximum velocity allowed in the trap, there is no consideration for marginal trapping.  
+UCN have a hard v^2 distribution and gravity is accounted for in the starting position via equaiton 4.7 in Bob G's Book. The Fermi potential in the trap is set by the maximum velocity allowed in the trap, there is no consideration for marginal trapping.  
 
 Requires boost libraries. I used 1.64
 
