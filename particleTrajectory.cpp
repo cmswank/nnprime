@@ -23,8 +23,8 @@ void particleTrajectory::loadFields(double B0, double B0m, double tempthetam, do
 		absw0wm=sqrt(pow(w0+w0m*cos(thetam),2)+pow(w0m*sin(thetam)*cos(phim),2)+pow(w0m*sin(thetam)*sin(phim),2));
 
 		//equation 38
-		wp = sqrt(0.5*(w0*w0+w0m*w0m)+4.*eps*eps+sqrt(0.25*pow(w0m*w0m-w0*w0,2)+4.*eps*eps*absw0wm*absw0wm));
-		wm = sqrt(0.5*(w0*w0+w0m*w0m)+4.*eps*eps-sqrt(0.25*pow(w0m*w0m-w0*w0,2)+4.*eps*eps*absw0wm*absw0wm));
+		wp = sgn(w0)*sqrt(0.5*(w0*w0+w0m*w0m)+4.*eps*eps+sqrt(0.25*pow(w0m*w0m-w0*w0,2)+4.*eps*eps*absw0wm*absw0wm));
+		wm = sgn(w0)*sqrt(0.5*(w0*w0+w0m*w0m)+4.*eps*eps-sqrt(0.25*pow(w0m*w0m-w0*w0,2)+4.*eps*eps*absw0wm*absw0wm));
 			
 		if (w0m==w0) theta=pi/2;  //this avoids divide by zero errors. c++ doesn't factor them out. 
 		else theta=acos(0.5*(w0m*w0m-w0*w0)/sqrt(0.25*pow<2>(w0m*w0m-w0*w0)+4.*eps*eps*absw0wm*absw0wm)); ///should be exact I think. 
