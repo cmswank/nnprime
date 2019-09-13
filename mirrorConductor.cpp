@@ -61,9 +61,11 @@ void mirrorConductor::Conduct()
   //for loop for scanning parameter, if any. 
   for(int parnum=0;parnum<=scannumber;parnum++){
     //naming for scanning, again if any. 
-    if(scanbool) tempofilename="./data/"+outfilename+"_"+std::to_string(parnum);
+    if(scanbool){ tempofilename="./data/"+outfilename+"_"+std::to_string(parnum);
+        *scanvar=scanstart+(double)parnum*(scanstop-scanstart)/((double)scannumber); //oops.
+    } 
     else  tempofilename="./data/"+outfilename;
-  *scanvar=scanstart+(double)parnum*(scanstop-scanstart)/((double)scannumber);
+  
   this->spinfile.open (tempofilename.c_str(),std::ios::binary | std::ios::out);
   
   spinfile.write(reinterpret_cast <const char*> (&ts),sizeof(double));
@@ -127,11 +129,12 @@ void mirrorConductor::Conduct()
 	
 	}
 
-	std::cout<<"\n"<<"Saving\n";
+	if(scanbool) std::cout<<"\nfinished run "<<parnum<<", saving\n";
+  else  std::cout<<"\nSaving";
 	this->saveSpins();
   tr.erase(tr.begin(), tr.end()); 
   }
-	std::cout<<"exiting\n";
+	std::cout<<"\nexiting \n";
 	return;
 }
 
@@ -190,7 +193,7 @@ void mirrorConductor::saveSpins()
 		}
 	}
 	spinfile.close();
-   	std::cout<<"Saving probably successful.\n";
+   	//std::cout<<"Saving probably successful.\n";
 	
 	return;//format file
  	
@@ -310,15 +313,16 @@ bool mirrorConductor::parseParameters(const std::string& name) {
 			       
              if((int)scan>-1){
               string scancheck=paramin.substr(scan+1,endpos-1);
-
+              
               size_t scan2=scancheck.find(",");
               if((int)scan2>-1){
                 if(scanbool==true)throw invalid_argument("Sorry, only scanning for one parameter is allowed.\nMay I suggest writing a python or bash script?\n");
-                scanbool=true;
+                
+                scanbool=scannow=true;
                 scanstart=atof(paramin.substr(startpos+1,scan-1-startpos).c_str());
                 scanstop=atof(paramin.substr(scan+1,scan2).c_str());
                 scannumber=atoi(paramin.substr(scan+scan2+2,scan+endpos-2).c_str());
-                scannow=true;
+                
                 
               }else throw invalid_argument("scan must have a start value, stop value, and number of runs (in that order.)"); 
 
